@@ -3,7 +3,7 @@
 class Car {
     int number;
     int order;
-    static int next = 1;
+    static int next;
 public:
     Car(int id) : number(id), order(-1) {}
     void entersTrack() {
@@ -17,6 +17,8 @@ public:
         return this->order < masik.order;
     }
 };
+
+int Car::next = 1;
 
 std::ostream& operator<<(std::ostream& os, const Car& car) {
     return os << car.getNumber() << " " << car.getOrder();
